@@ -80,6 +80,7 @@ chmod +x jshielder.sh
 
 3)
 break
+exit
 ;;
 
 *) ;;
