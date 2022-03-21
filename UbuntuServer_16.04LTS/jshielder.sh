@@ -1,15 +1,7 @@
 #!/bin/bash
 
-# JShielder v2.4
-# Deployer for Ubuntu Server 16.04 LTS
-#
-# Jason Soto
-# www.jasonsoto.com
-# www.jsitech-sec.com
-# Twitter = @JsiTech
 
-# Based from JackTheStripper Project
-# Credits to Eugenia Bahit
+# Linux Hardening Script
 
 # A lot of Suggestion Taken from The Lynis Project
 # www.cisofy.com/lynis
@@ -17,23 +9,25 @@
 
 #Credits to Center for Internet Security CIS
 
-source helpers.sh
-
 ##############################################################################################################
 
 f_banner(){
 echo
 echo "
+        ,▄▓▓▓▌▄,
+    ,▄█▓▓▀╙  ╙▀▓▓▄                                       ▓▓           ╓▓▓▓▌                       ▓▓
+ ▄░▓▓▀╙    ╓,   ▓▓   ┌▄▄▄▄▄,   ,▄▄▄▄,   ╓▄▄▄▄   ▄▄▄▄▄╓   ▓▓   ▄▄▄▄, ┌▄▓▓▌▄▄]▄µ   ▄▄ ▄▄▄▄▄▄    ╓▄▄▄▓▓
+▓▓╨    ,▄░▓╬╬   ▓▓   ▐▓▌▀▀▀▓▓ ▐▓▓▀╙▓▓▌ ▓▓▀╙╙▓▓▌ ▓▓▀▀▀▓▓  ▓▓ ▐▓▓▀╙▓▓▌└▀▓▓▀▀▀╫▓▌   ▓▓ ▓▓▀▀▀▓▓µ┌▓▓▀▀▀▓▓
+▓▓   @▓█╨  ╬╬   ▓▓   ▐▓▌   ▓▓ ╫▓▓▓▓▓▓▌ ▓▓   j▓▌ ▓▓   ╫▓▄ ▓▓ ╫▓▓▓▓▓▓▓  ▓▓⌐  ╫▓▌   ▓▓ ▓▓   ╫▓▌▐▓▌   ▓▓
+▓▓   ╫╬Γ  ┌╬╬   ╣╬   ▐▓▌,,▄▓▓ ╫▓▌  ▄▓▌ ▓▓▄ ,▓▓▌ ▓▓,,▄▓▓  ▓▓ ╫▓▌  ▄▓▌  ▓▓⌐  ╙▓▓  ▄▓▓ ▓▓   ╫▓▌└▓▓▄,,▓▓
+▓▓   ╫▓▄▄█▓▀╙   ╬╬   ▐▓▓▀▀▀▀   ╙▀▀▀▀▀   ▀▀▀▀▀▀  ▓▓▀▀▀▀   ▀▀  ╨▀▀▀▀▀   ▀▀    ╙▀▀▀▀▀  ▀▀   ╙▀T  ▀▀▀▀▀▀
+▓▓ ,▄▓▓█╨    ,╥░╬▀   ▐▓▌                        ▓▓
+╙▓▓▓▀╫▓Γ   #╣╣╝╙
+     ╫▓Γ   ╙
+     ╫▀
 
-     ██╗███████╗██╗  ██╗██╗███████╗██╗     ██████╗ ███████╗██████╗
-     ██║██╔════╝██║  ██║██║██╔════╝██║     ██╔══██╗██╔════╝██╔══██╗
-     ██║███████╗███████║██║█████╗  ██║     ██║  ██║█████╗  ██████╔╝
-██   ██║╚════██║██╔══██║██║██╔══╝  ██║     ██║  ██║██╔══╝  ██╔══██╗
-╚█████╔╝███████║██║  ██║██║███████╗███████╗██████╔╝███████╗██║  ██║
-╚════╝ ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-
-For Ubuntu Server 16.04 LTS
-Developed By Jason Soto @Jsitech"
+Automated Hardening Script for Linux Servers
+Developed By Hyunseok Jung @hyunsukgo "
 echo
 echo
 
