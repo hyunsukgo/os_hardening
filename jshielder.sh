@@ -1,17 +1,7 @@
 #!/bin/bash
 
 
-# JShielder v2.4
 # Linux Hardening Script
-#
-# Jason Soto
-# www.jasonsoto.com
-# Twitter = @JsiTech
-
-# Tool URL = github.com/jsitech/jshielder
-
-# Based from JackTheStripper Project
-# Credits to Eugenia Bahit
 
 # A lot of Suggestion Taken from The Lynis Project
 # www.cisofy.com/lynis
@@ -24,16 +14,20 @@
 f_banner(){
 echo
 echo "
+        ,▄▓▓▓▌▄,
+    ,▄█▓▓▀╙  ╙▀▓▓▄                                       ▓▓           ╓▓▓▓▌                       ▓▓
+ ▄░▓▓▀╙    ╓,   ▓▓   ┌▄▄▄▄▄,   ,▄▄▄▄,   ╓▄▄▄▄   ▄▄▄▄▄╓   ▓▓   ▄▄▄▄, ┌▄▓▓▌▄▄]▄µ   ▄▄ ▄▄▄▄▄▄    ╓▄▄▄▓▓
+▓▓╨    ,▄░▓╬╬   ▓▓   ▐▓▌▀▀▀▓▓ ▐▓▓▀╙▓▓▌ ▓▓▀╙╙▓▓▌ ▓▓▀▀▀▓▓  ▓▓ ▐▓▓▀╙▓▓▌└▀▓▓▀▀▀╫▓▌   ▓▓ ▓▓▀▀▀▓▓µ┌▓▓▀▀▀▓▓
+▓▓   @▓█╨  ╬╬   ▓▓   ▐▓▌   ▓▓ ╫▓▓▓▓▓▓▌ ▓▓   j▓▌ ▓▓   ╫▓▄ ▓▓ ╫▓▓▓▓▓▓▓  ▓▓⌐  ╫▓▌   ▓▓ ▓▓   ╫▓▌▐▓▌   ▓▓
+▓▓   ╫╬Γ  ┌╬╬   ╣╬   ▐▓▌,,▄▓▓ ╫▓▌  ▄▓▌ ▓▓▄ ,▓▓▌ ▓▓,,▄▓▓  ▓▓ ╫▓▌  ▄▓▌  ▓▓⌐  ╙▓▓  ▄▓▓ ▓▓   ╫▓▌└▓▓▄,,▓▓
+▓▓   ╫▓▄▄█▓▀╙   ╬╬   ▐▓▓▀▀▀▀   ╙▀▀▀▀▀   ▀▀▀▀▀▀  ▓▓▀▀▀▀   ▀▀  ╨▀▀▀▀▀   ▀▀    ╙▀▀▀▀▀  ▀▀   ╙▀T  ▀▀▀▀▀▀
+▓▓ ,▄▓▓█╨    ,╥░╬▀   ▐▓▌                        ▓▓
+╙▓▓▓▀╫▓Γ   #╣╣╝╙
+     ╫▓Γ   ╙
+     ╫▀
 
-     ██╗███████╗██╗  ██╗██╗███████╗██╗     ██████╗ ███████╗██████╗
-     ██║██╔════╝██║  ██║██║██╔════╝██║     ██╔══██╗██╔════╝██╔══██╗
-     ██║███████╗███████║██║█████╗  ██║     ██║  ██║█████╗  ██████╔╝
-██   ██║╚════██║██╔══██║██║██╔══╝  ██║     ██║  ██║██╔══╝  ██╔══██╗
-╚█████╔╝███████║██║  ██║██║███████╗███████╗██████╔╝███████╗██║  ██║
-╚════╝ ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-                                                              
 Automated Hardening Script for Linux Servers
-Developed By Jason Soto @JsiTech "
+Developed By Hyunseok Jung @hyunsukgo "
 echo
 echo
 
@@ -66,11 +60,7 @@ echo -e "\e[34m-----------------------------------------------------------------
 echo ""
 echo "1. Ubuntu Server 16.04 LTS"
 echo "2. Ubuntu Server 18.04 LTS"
-echo "3. Linux CentOS 7 (Coming Soon)"
-echo "4. Debian GNU/Linux 8 (Coming Soon)"
-echo "5. Debian GNU/Linux 9 (Coming Soon)"
-echo "6. Red Hat Linux 7 (Coming Soon)"
-echo "7. Exit"
+echo "3. Exit"
 echo
 
 read menu
