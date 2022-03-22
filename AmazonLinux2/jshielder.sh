@@ -440,7 +440,7 @@ echo
 echo -e "${RED}1.8.1${NC} Kernel Hardening"
 amazon_linux_1_8_1_temp_1="$(egrep -q "^(\s*)kernel.randomize_va_space\s*=\s*\S+(\s*#.*)?\s*$" /etc/sysctl.conf && sed -ri "s/^(\s*)kernel.randomize_va_space\s*=\s*\S+(\s*#.*)?\s*$/\1kernel.randomize_va_space = 2\2/" /etc/sysctl.conf || echo "kernel.randomize_va_space = 2" >> /etc/sysctl.conf)"
 amazon_linux_1_8_1_temp_1=$?
-amazon_linux_1_8_1_temp_3="$(sysctl -w dev.tty.ldisc_autoload=0)"
+amazon_linux_1_8_1_temp_3="$(sysctl -w dev.tty.ldisc_autoload=0) && $(sysctl -w fs.protected_regular=2)"
 amazon_linux_1_8_1_temp_3=$?
 if [[ "$amazon_linux_1_8_1_temp_1" -eq 0 ]] && [[ "$amazon_linux_1_8_1_temp_3" -eq 0 ]]; then
   echo -e "${GREEN}Remediated:${NC} Device TTY off"
@@ -449,7 +449,17 @@ else
   echo -e "${RED}UnableToRemediate:${NC} Ensure address space layout randomization (ASLR) is enabled"
   fail=$((fail + 1))
 fi
-
+sysctl -w fs.protected_fifos=2
+sysctl -w kernel.dmesg_restrict=1
+sysctl -w kernel.kptr_restrict=2
+sysctl -w kernel.modules_disabled=1
+sysctl -w kernel.perf_event_paranoid=3
+sysctl -w kernel.sysrq=0
+sysctl -w kernel.unprivileged_bpf_disabled=1
+sysctl -w kernel.yama.ptrace_scope=1
+sysctl -w net.core.bpf_jit_harden=2
+sysctl -w net.ipv6.conf.all.accept_redirects=0
+sysctl -w net.ipv6.conf.default.accept_redirects=0
 # Ensure permissions on /etc/issue are configured
 echo
 echo -e "${RED}1.7.1.5${NC} Ensure permissions on /etc/issue are configured"
