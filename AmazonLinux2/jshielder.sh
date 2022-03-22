@@ -34,7 +34,7 @@ success=0
 fail=0
 
 yum update -y && yum install wget -y
-
+yum -y remove postfix
 
 ###########################################################################################################################
 
@@ -287,6 +287,8 @@ else
   fail=$((fail + 1))
 fi
 
+
+
 # Ensure prelink is disabled
 echo
 echo -e "${RED}1.5.3${NC} Ensure prelink is disabled"
@@ -426,6 +428,25 @@ if [[ "$amazon_linux_1_7_1_4" -eq 0 ]]; then
   success=$((success + 1))
 else
   echo -e "${RED}UnableToRemediate:${NC} Ensure permissions on /etc/motd are configured"
+  fail=$((fail + 1))
+fi
+
+############################################################################################################################
+
+##Category 1.8 Initial Setup - Kernel Hardening
+
+# Kernel Hardening
+echo
+echo -e "${RED}1.8.1${NC} Kernel Hardening"
+amazon_linux_1_8_1_temp_1="$(egrep -q "^(\s*)kernel.randomize_va_space\s*=\s*\S+(\s*#.*)?\s*$" /etc/sysctl.conf && sed -ri "s/^(\s*)kernel.randomize_va_space\s*=\s*\S+(\s*#.*)?\s*$/\1kernel.randomize_va_space = 2\2/" /etc/sysctl.conf || echo "kernel.randomize_va_space = 2" >> /etc/sysctl.conf)"
+amazon_linux_1_8_1_temp_1=$?
+amazon_linux_1_8_1_temp_3="$(sysctl -w dev.tty.ldisc_autoload=0)"
+amazon_linux_1_8_1_temp_3=$?
+if [[ "$amazon_linux_1_8_1_temp_1" -eq 0 ]] && [[ "$amazon_linux_1_8_1_temp_3" -eq 0 ]]; then
+  echo -e "${GREEN}Remediated:${NC} Device TTY off"
+  success=$((success + 1))
+else
+  echo -e "${RED}UnableToRemediate:${NC} Ensure address space layout randomization (ASLR) is enabled"
   fail=$((fail + 1))
 fi
 
@@ -785,6 +806,8 @@ else
   echo -e "${RED}UnableToRemediate:${NC} Ensure talk server is not enabled"
   fail=$((fail + 1))
 fi
+
+
 
 ############################################################################################################################
 
