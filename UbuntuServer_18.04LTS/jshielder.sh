@@ -64,9 +64,8 @@ install_dep(){
    echo -e "\e[93m[+]\e[00m Setting some Prerequisites"
    echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
    echo ""
-   spinner
+
    add-apt-repository universe
-   say_done
 }
 
 ##############################################################################################################
@@ -1429,6 +1428,11 @@ set_grubpassword
 file_permissions
 ;;
 
+7)
+chmod +x jshielder-CIS.sh
+./jshielder-CIS.sh
+;;
+
 6)
 
 menu=""
@@ -1632,10 +1636,6 @@ esac
 done
 ;;
 
-7)
-chmod +x jshielder-CIS.sh
-./jshielder-CIS.sh
-;;
 
 
 8)
