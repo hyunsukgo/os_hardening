@@ -197,9 +197,9 @@ sysctl -e -p
 #1.7.1.1 Ensure message of the day is configured properly (Scored)
 #1.7.1.2 Ensure local login warning banner is configured properly (Not Scored)
 #1.7.1.3 Ensure remote login warning banner is configured properly (Not Scored)
-cat templates/motd-CIS > /etc/motd
-cat templates/motd-CIS > /etc/issue
-cat templates/motd-CIS > /etc/issue.net
+#cat templates/motd-CIS > /etc/motd
+#cat templates/motd-CIS > /etc/issue
+#cat templates/motd-CIS > /etc/issue.net
 
 #1.7.1.4 Ensure permissions on /etc/motd are configured (Not Scored)
 #1.7.1.5 Ensure permissions on /etc/issue are configured (Scored)
@@ -292,8 +292,8 @@ apt-get remove telnet
 
 #3.3.3 Ensure IPv6 is disabled (Not Scored)
 
-sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="ipv6.disable=1"/g' /etc/default/grub
-update-grub
+#sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="ipv6.disable=1"/g' /etc/default/grub
+#update-grub
 
 #3.4 TCP Wrappers
 #.4.1 Ensure TCP Wrappers is installed (Scored)
@@ -386,7 +386,7 @@ echo -e "Installing and configuring Auditd"
 spinner
 sleep 1
 
-apt-get install auditd
+apt-get -y install auditd
 
 #.1.1.1 Ensure audit log storage size is configured (Not Scored)
 #.1.1.2 Ensure system is disabled when audit logs are full (Scored)
