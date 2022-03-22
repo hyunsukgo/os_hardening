@@ -34,58 +34,6 @@ echo
 
 ##############################################################################################################
 
-#Check if Running with root user
-
-if [ "$USER" != "root" ]; then
-      echo "Permission Denied"
-      echo "Can only be run by root"
-      exit
-else
-      clear
-      f_banner
-fi
-
-
-menu=""
-until [ "$menu" = "10" ]; do
-
-clear
-f_banner
-
-echo
-echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
-echo -e "\e[93m[+]\e[00m SELECT YOUR LINUX DISTRIBUTION"
-echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
-echo ""
-echo "1. Ubuntu Server 16.04 LTS"
-echo "2. Ubuntu Server 18.04 LTS"
-echo "3. Exit"
-echo
-
-read menu
-case $menu in
-
-1)
-cd UbuntuServer_16.04LTS/
-chmod +x jshielder.sh
-./jshielder.sh
-;;
-
-2)
-cd UbuntuServer_18.04LTS/
-chmod +x jshielder.sh
-./jshielder.sh
-;;
-
-8)
-break
-;;
-
-*) ;;
-
-esac
-done
-
 # Check if running with root User
 
 clear
