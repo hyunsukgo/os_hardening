@@ -60,7 +60,7 @@ echo ""
 echo "1. Ubuntu Server 16.04 LTS"
 echo "2. Ubuntu Server 18.04 LTS"
 echo "3. Exit"
-echo
+echo ""
 
 read menu
 case $menu in
