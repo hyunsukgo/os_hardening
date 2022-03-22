@@ -59,11 +59,7 @@ echo -e "\e[34m-----------------------------------------------------------------
 echo ""
 echo "1. Ubuntu Server 16.04 LTS"
 echo "2. Ubuntu Server 18.04 LTS"
-echo "3. Linux CentOS 7 (Coming Soon)"
-echo "4. Debian GNU/Linux 8 (Coming Soon)"
-echo "5. Debian GNU/Linux 9 (Coming Soon)"
-echo "6. Red Hat Linux 7 (Coming Soon)"
-echo "7. Exit"
+echo "3. Exit"
 echo
 
 read menu
@@ -81,7 +77,7 @@ chmod +x jshielder.sh
 ./jshielder.sh
 ;;
 
-8)
+3)
 break
 ;;
 
