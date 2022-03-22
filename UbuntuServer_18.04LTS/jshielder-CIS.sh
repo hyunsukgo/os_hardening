@@ -35,23 +35,23 @@ echo
 
 ##############################################################################################################
 
-#Check if Running with root user
+# Check if running with root User
 
-if [ "$USER" != "root" ]; then
+clear
+f_banner
+
+
+check_root() {
+if [ $EUID -ne 0 ]; then
       echo "Permission Denied"
       echo "Can only be run by root"
       exit
 else
       clear
       f_banner
+      cat templates/texts/welcome-CIS
 fi
-
-
-menu=""
-until [ "$menu" = "10" ]; do
-
-clear
-f_banner
+}
 
 ##############################################################################################################
 
